@@ -9,7 +9,10 @@ public class Spawner : MonoBehaviour
     //defining the collider shapes for spawning
     private enum ColliderShape { BOX, SPHERE }
 
+    private enum PhysicsMode { DYNAMIC, STATIC, MIXED }
+
     [SerializeField] private ColliderShape shape = ColliderShape.BOX;
+    [SerializeField] private PhysicsMode physicsMode = PhysicsMode.DYNAMIC;
     [Space]
     [SerializeField] private GameObject boxPrefab;
     [SerializeField] private GameObject spherePrefab;
@@ -38,7 +41,9 @@ public class Spawner : MonoBehaviour
                 Random.Range(-spawnArea.z / 2f, spawnArea.z / 2f)
             );
 
-            GameObject instance = Instantiate(selectedPrefab, spawnPosition, Quaternion.identity, parentObj.transform);
+            GameObject obj = Instantiate(selectedPrefab, spawnPosition, Quaternion.identity, parentObj.transform);
+
+            ApplyPhysicsSettings(obj, i);
         }
     }
 
@@ -56,6 +61,41 @@ public class Spawner : MonoBehaviour
             default:
                 Debug.LogWarning("No collider shape selected. Switch to default: box.");
                 return boxPrefab;
+        }
+    }
+
+    /// <summary>
+    /// Applies physics settings to the spawned object based on the selected physics mode
+    /// </summary>
+    private void ApplyPhysicsSettings(GameObject obj, int index)
+    {
+        Rigidbody rb = obj.GetComponent<Rigidbody>();
+
+        switch (physicsMode)
+        {
+            case PhysicsMode.DYNAMIC:
+                //ensures object has a Rigidbody and it's active
+                if (!rb) rb = obj.AddComponent<Rigidbody>();
+                rb.isKinematic = false;
+                break;
+
+            case PhysicsMode.STATIC:
+                //removes Rigidbody if it exists to make the object static
+                if (rb) Destroy(rb);
+                break;
+
+            case PhysicsMode.MIXED:
+                //alternate between dynamic (even) and static (odd)
+                if (index % 2 == 0)
+                {
+                    if (!rb) rb = obj.AddComponent<Rigidbody>();
+                    rb.isKinematic = false;
+                }
+                else
+                {
+                    if (rb) Destroy(rb);
+                }
+                break;
         }
     }
 }
