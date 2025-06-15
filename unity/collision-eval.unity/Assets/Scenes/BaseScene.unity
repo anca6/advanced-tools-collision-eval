@@ -128,6 +128,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 602389484}
+  - component: {fileID: 602389485}
   m_Layer: 0
   m_Name: SpawnerController
   m_TagString: Untagged
@@ -150,6 +151,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &602389485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 602389483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a04d7b140b02cd94da146f42157aa022, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shape: 0
+  boxPrefab: {fileID: 8045760220224369963, guid: 81d816b975cf0b748a5e2b97ac3ca477, type: 3}
+  spherePrefab: {fileID: 6314489534810457051, guid: fcf48c6a958c3bc4282d2ec9c39de4a2, type: 3}
+  objectCount: 0
+  spawnArea: {x: 10, y: 0, z: 10}
+  minHeight: 5
+  maxHeight: 15
 --- !u!1 &1004637249
 GameObject:
   m_ObjectHideFlags: 0
