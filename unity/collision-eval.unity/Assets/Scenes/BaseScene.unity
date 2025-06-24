@@ -441,7 +441,7 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
---- !u!1001 &2904718557450131173
+--- !u!1001 &2328291624585324812
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -449,55 +449,55 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1537675943610874798, guid: bcb027b9062574e43ad6deedff319986, type: 3}
+    - target: {fileID: 4655029819687912027, guid: b0cf20779c574de43a4a9ee54698dae0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1537675943610874798, guid: bcb027b9062574e43ad6deedff319986, type: 3}
+    - target: {fileID: 4655029819687912027, guid: b0cf20779c574de43a4a9ee54698dae0, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1537675943610874798, guid: bcb027b9062574e43ad6deedff319986, type: 3}
+    - target: {fileID: 4655029819687912027, guid: b0cf20779c574de43a4a9ee54698dae0, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1537675943610874798, guid: bcb027b9062574e43ad6deedff319986, type: 3}
+    - target: {fileID: 4655029819687912027, guid: b0cf20779c574de43a4a9ee54698dae0, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1537675943610874798, guid: bcb027b9062574e43ad6deedff319986, type: 3}
+    - target: {fileID: 4655029819687912027, guid: b0cf20779c574de43a4a9ee54698dae0, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: 0.000000021855694
       objectReference: {fileID: 0}
-    - target: {fileID: 1537675943610874798, guid: bcb027b9062574e43ad6deedff319986, type: 3}
+    - target: {fileID: 4655029819687912027, guid: b0cf20779c574de43a4a9ee54698dae0, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1537675943610874798, guid: bcb027b9062574e43ad6deedff319986, type: 3}
+    - target: {fileID: 4655029819687912027, guid: b0cf20779c574de43a4a9ee54698dae0, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 1537675943610874798, guid: bcb027b9062574e43ad6deedff319986, type: 3}
+    - target: {fileID: 4655029819687912027, guid: b0cf20779c574de43a4a9ee54698dae0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1537675943610874798, guid: bcb027b9062574e43ad6deedff319986, type: 3}
+    - target: {fileID: 4655029819687912027, guid: b0cf20779c574de43a4a9ee54698dae0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1537675943610874798, guid: bcb027b9062574e43ad6deedff319986, type: 3}
+    - target: {fileID: 4655029819687912027, guid: b0cf20779c574de43a4a9ee54698dae0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8524946515219513501, guid: bcb027b9062574e43ad6deedff319986, type: 3}
+    - target: {fileID: 4655029819688279675, guid: b0cf20779c574de43a4a9ee54698dae0, type: 3}
       propertyPath: m_Name
-      value: Capsule
+      value: Deformed Barrel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: bcb027b9062574e43ad6deedff319986, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: b0cf20779c574de43a4a9ee54698dae0, type: 3}
 --- !u!1001 &3470941583571838429
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -563,4 +563,4 @@ SceneRoots:
   - {fileID: 1732230292}
   - {fileID: 1004637253}
   - {fileID: 3470941583571838429}
-  - {fileID: 2904718557450131173}
+  - {fileID: 2328291624585324812}
