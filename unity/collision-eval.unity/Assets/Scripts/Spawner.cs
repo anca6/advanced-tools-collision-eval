@@ -1,101 +1,64 @@
 using UnityEngine;
 
 /// <summary>
-/// Spawns a configurable number of objects at random positions within a defined area
-/// Objects are instantiated at random heights and parented under a game object
+/// Spawns a number of objects using a selected collider type
+/// Options: Box, Sphere, Capsule, and Mesh prefabs
 /// </summary>
 public class Spawner : MonoBehaviour
 {
-    //defining the collider shapes for spawning
-    private enum ColliderShape { BOX, SPHERE }
+    public enum ColliderType
+    {
+        Box,
+        Sphere,
+        Capsule,
+        Mesh
+    }
 
-    private enum PhysicsMode { DYNAMIC, STATIC, MIXED }
-
-    [SerializeField] private ColliderShape shape = ColliderShape.BOX;
-    [SerializeField] private PhysicsMode physicsMode = PhysicsMode.DYNAMIC;
-    [Space]
-    [SerializeField] private GameObject boxPrefab;
-    [SerializeField] private GameObject spherePrefab;
-    [Space]
-    [SerializeField] private int objectCount;
-    [SerializeField] private Vector3 spawnArea = new Vector3(10f, 0f, 10f);
+    [Header("Spawner Settings")]
+    [SerializeField] private ColliderType colliderType = ColliderType.Box;
+    [SerializeField] private int objectCount = 100;
+    [SerializeField] private Vector3 spawnAreaSize = new Vector3(10f, 0f, 10f);
     [SerializeField] private float minHeight = 5f;
     [SerializeField] private float maxHeight = 15f;
 
-    private GameObject parentObj; //parent object to organize all spawned objects
+    [Header("Prefabs")]
+    [SerializeField] private GameObject boxPrefab;
+    [SerializeField] private GameObject spherePrefab;
+    [SerializeField] private GameObject capsulePrefab;
+    [SerializeField] private GameObject meshPrefab;
 
-    /// <summary>
-    /// Initializes and spawns objects when the scene starts
-    /// </summary>
-    private void Start()
+    private GameObject objectParent;
+
+    void Start()
     {
-        parentObj = new GameObject("SpawnedObjects");
+        objectParent = new GameObject("SpawnedObjects");
 
-        GameObject selectedPrefab = GetSelectedPrefab();
+        GameObject selectedPrefab = GetPrefabForCollider();
 
         for (int i = 0; i < objectCount; i++)
         {
-            Vector3 spawnPosition = new Vector3(
-                Random.Range(-spawnArea.x / 2f, spawnArea.x / 2f),
+            Vector3 pos = new Vector3(
+                Random.Range(-spawnAreaSize.x / 2, spawnAreaSize.x / 2),
                 Random.Range(minHeight, maxHeight),
-                Random.Range(-spawnArea.z / 2f, spawnArea.z / 2f)
+                Random.Range(-spawnAreaSize.z / 2, spawnAreaSize.z / 2)
             );
 
-            GameObject obj = Instantiate(selectedPrefab, spawnPosition, Quaternion.identity, parentObj.transform);
-
-            ApplyPhysicsSettings(obj, i);
+            GameObject instance = Instantiate(selectedPrefab, pos, Quaternion.identity, objectParent.transform);
         }
     }
 
     /// <summary>
-    /// Returns the prefab to spawn based on the selected collider shape
+    /// Returns the prefab based on selected collider type.
     /// </summary>
-    private GameObject GetSelectedPrefab()
+    private GameObject GetPrefabForCollider()
     {
-        switch (shape)
+        return colliderType switch
         {
-            case ColliderShape.BOX:
-                return boxPrefab;
-            case ColliderShape.SPHERE:
-                return spherePrefab;
-            default:
-                Debug.LogWarning("No collider shape selected. Switch to default: box.");
-                return boxPrefab;
-        }
-    }
-
-    /// <summary>
-    /// Applies physics settings to the spawned object based on the selected physics mode
-    /// </summary>
-    private void ApplyPhysicsSettings(GameObject obj, int index)
-    {
-        Rigidbody rb = obj.GetComponent<Rigidbody>();
-
-        switch (physicsMode)
-        {
-            case PhysicsMode.DYNAMIC:
-                //ensures object has a Rigidbody and it's active
-                if (!rb) rb = obj.AddComponent<Rigidbody>();
-                rb.isKinematic = false;
-                break;
-
-            case PhysicsMode.STATIC:
-                //removes Rigidbody if it exists to make the object static
-                if (rb) Destroy(rb);
-                break;
-
-            case PhysicsMode.MIXED:
-                //alternate between dynamic (even) and static (odd)
-                if (index % 2 == 0)
-                {
-                    if (!rb) rb = obj.AddComponent<Rigidbody>();
-                    rb.isKinematic = false;
-                }
-                else
-                {
-                    if (rb) Destroy(rb);
-                }
-                break;
-        }
+            ColliderType.Box => boxPrefab,
+            ColliderType.Sphere => spherePrefab,
+            ColliderType.Capsule => capsulePrefab,
+            ColliderType.Mesh => meshPrefab,
+            _ => boxPrefab
+        };
     }
 }
