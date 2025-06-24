@@ -867,7 +867,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4554592431409299202, guid: 3ef7f0de82c8f49418a8b7825fee3ca2, type: 3}
       propertyPath: objectCount
-      value: 100
+      value: 20000
       objectReference: {fileID: 0}
     - target: {fileID: 4554592431409299202, guid: 3ef7f0de82c8f49418a8b7825fee3ca2, type: 3}
       propertyPath: spawnAreaSize.x
@@ -1038,6 +1038,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 611958661122935533, guid: 2fca9bd3249f73f409c85dd92bce2230, type: 3}
+      propertyPath: objectCount
+      value: 20000
+      objectReference: {fileID: 0}
     - target: {fileID: 1014108587243775085, guid: 2fca9bd3249f73f409c85dd92bce2230, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.7791128
