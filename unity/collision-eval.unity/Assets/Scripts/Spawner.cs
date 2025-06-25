@@ -17,6 +17,7 @@ public class Spawner : MonoBehaviour
     [Header("Spawner Settings")]
     [SerializeField] private ColliderType colliderType = ColliderType.Box;
     [SerializeField] private int objectCount = 100;
+    [SerializeField, Range(0, 100)] private int staticPercentage = 0;
     [SerializeField] private Vector3 spawnAreaSize = new Vector3(10f, 0f, 10f);
     [SerializeField] private float minHeight = 5f;
     [SerializeField] private float maxHeight = 15f;
@@ -35,6 +36,8 @@ public class Spawner : MonoBehaviour
 
         GameObject selectedPrefab = GetPrefabForCollider();
 
+        int staticCount = Mathf.FloorToInt(objectCount * (staticPercentage / 100f));
+
         for (int i = 0; i < objectCount; i++)
         {
             Vector3 pos = new Vector3(
@@ -44,6 +47,19 @@ public class Spawner : MonoBehaviour
             );
 
             GameObject instance = Instantiate(selectedPrefab, pos, Quaternion.identity, objectParent.transform);
+
+            if (i < staticCount)
+            {
+                instance.isStatic = true;
+                Rigidbody rb = instance.GetComponent<Rigidbody>();
+                if (rb != null) Destroy(rb);
+            }
+            else
+            {
+                instance.isStatic = false;
+                if (!instance.GetComponent<Rigidbody>())
+                    instance.AddComponent<Rigidbody>();
+            }
         }
     }
 
