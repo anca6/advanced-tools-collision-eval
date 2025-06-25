@@ -52,4 +52,4 @@ MonoBehaviour:
   boxPrefab: {fileID: 8045760220224369963, guid: 81d816b975cf0b748a5e2b97ac3ca477, type: 3}
   spherePrefab: {fileID: 6314489534810457051, guid: fcf48c6a958c3bc4282d2ec9c39de4a2, type: 3}
   capsulePrefab: {fileID: 8524946515219513501, guid: bcb027b9062574e43ad6deedff319986, type: 3}
-  meshPrefab: {fileID: 4655029819688279675, guid: b0cf20779c574de43a4a9ee54698dae0, type: 3}
+  meshPrefab: {fileID: 8883138198122997000, guid: b0cf20779c574de43a4a9ee54698dae0, type: 3}
