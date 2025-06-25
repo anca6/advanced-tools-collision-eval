@@ -255,7 +255,7 @@ Transform:
   m_GameObject: {fileID: 998680607}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.7791128, y: 30.55, z: -3.1849728}
+  m_LocalPosition: {x: 54.5, y: 30.55, z: -3.1849728}
   m_LocalScale: {x: 50, y: 1, z: 50}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -968,7 +968,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4554592431409299202, guid: 3ef7f0de82c8f49418a8b7825fee3ca2, type: 3}
       propertyPath: maxHeight
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4554592431409299202, guid: 3ef7f0de82c8f49418a8b7825fee3ca2, type: 3}
       propertyPath: minHeight
@@ -976,11 +976,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4554592431409299202, guid: 3ef7f0de82c8f49418a8b7825fee3ca2, type: 3}
       propertyPath: objectCount
-      value: 8900
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 4554592431409299202, guid: 3ef7f0de82c8f49418a8b7825fee3ca2, type: 3}
       propertyPath: colliderType
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4554592431409299202, guid: 3ef7f0de82c8f49418a8b7825fee3ca2, type: 3}
       propertyPath: spawnAreaSize.x
@@ -989,6 +989,10 @@ PrefabInstance:
     - target: {fileID: 4554592431409299202, guid: 3ef7f0de82c8f49418a8b7825fee3ca2, type: 3}
       propertyPath: spawnAreaSize.z
       value: 48
+      objectReference: {fileID: 0}
+    - target: {fileID: 4554592431409299202, guid: 3ef7f0de82c8f49418a8b7825fee3ca2, type: 3}
+      propertyPath: staticPercentage
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 8200608163213421253, guid: 3ef7f0de82c8f49418a8b7825fee3ca2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1153,11 +1157,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 611958661122935533, guid: 2fca9bd3249f73f409c85dd92bce2230, type: 3}
       propertyPath: shape
-      value: Capsule
+      value: Box_SD
       objectReference: {fileID: 0}
     - target: {fileID: 611958661122935533, guid: 2fca9bd3249f73f409c85dd92bce2230, type: 3}
       propertyPath: objectCount
-      value: 8900
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 1014108587243775085, guid: 2fca9bd3249f73f409c85dd92bce2230, type: 3}
       propertyPath: m_LocalPosition.x
