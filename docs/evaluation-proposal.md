@@ -1,1 +1,1 @@
-Evaluating the performance of Unity vs Unreal Engine's collision detection system in 3D environments.
+Evaluating the performance of Unity's collision detection system in 3D environments.

@@ -9,9 +9,9 @@ using System.IO;
 public class Logger : MonoBehaviour
 {
     [Header("Test Info")]
-    [SerializeField] private string shape = "Box";           // Set manually per test (Box, Sphere, etc.)
-    [SerializeField] private int objectCount = 100;          // Match Spawner count
-    [SerializeField] private float logDuration = 30f;        // Time to collect FPS samples
+    [SerializeField] private string shape = "Box";      // Set manually per test (Box, Sphere, etc.)
+    [SerializeField] private int objectCount = 100;     // Match Spawner count
+    [SerializeField] private float logDuration = 30f;   // Time to collect FPS samples
 
     private List<float> frameTimes = new List<float>();
     private float startTime;
