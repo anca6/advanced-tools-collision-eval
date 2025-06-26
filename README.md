@@ -24,3 +24,7 @@ This project investigates how different Unity collider types affect performance 
 - Performance charts for each collider type
 - Static vs dynamic performance comparison
 - Profiler screenshots and CSV logs
+
+## Credits
+
+- [Low poly model](https://assetstore.unity.com/packages/3d/vegetation/trees/low-poly-tree-pack-57866) by Broken Vector
